@@ -1,0 +1,99 @@
+
+<!doctype html>
+<html>
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8DKQPTB9FB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-8DKQPTB9FB');
+    </script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.1/feather.min.js" integrity="sha512-4lykFR6C2W55I60sYddEGjieC2fU79R7GUtaqr3DzmNbo0vSaO1MfUjMoTFYYuedjfEix6uV9jVTtRCSBU/Xiw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>How to create a static HTML blog - Part 1: Why? | Statamic</title><link rel="canonical" href="https://akshitarora.dev/blog/how-to-create-a-static-html-blog-part-1-why" /><meta name="description" content="" /><!-- Facebook Meta Tags --><meta property="og:url" content="http://localhost"><meta property="og:type" content="website"><meta property="og:title" content="How to create a static HTML blog - Part 1: Why? | Statamic"><meta property="og:description" content=""><meta property="og:image" content=""><!-- Twitter Meta Tags --><meta name="twitter:card" content="summary_large_image"><meta property="twitter:domain" content="http://localhost"><meta property="twitter:url" content="http://localhost"><meta name="twitter:title" content="How to create a static HTML blog - Part 1: Why? | Statamic"><meta name="twitter:description" content=""><meta property="twitter:image" content="">
+    <link rel="preload" as="style" href="https://akshitarora.dev/build/assets/site-2f76cc30.css" /><link rel="modulepreload" href="https://akshitarora.dev/build/assets/site-4ed993c7.js" /><link rel="stylesheet" href="https://akshitarora.dev/build/assets/site-2f76cc30.css" /><script type="module" src="https://akshitarora.dev/build/assets/site-4ed993c7.js"></script>
+</head>
+<body class="bg-gray-100">
+    <section class="py-10 md:py-16">
+        <div class="container max-w-screen-xl mx-auto px-4">
+            <nav class="flex items-center justify-between mb-10">
+                <!-- <img src="assets/image/navbar-logo.png" alt="Logo"> -->
+                <a href="/" class="text-4xl font-bold text-gray-700">
+                    Akshit Arora
+                </a>
+                <a href="/" class="hidden md:block px-7 py-3 md:px-9 md:py-4 bg-white font-medium md:font-semibold text-gray-700 text-md rounded-md hover:bg-gray-700 hover:text-white transition ease-linear duration-500">
+                    Visit Home
+                </a>
+            </nav>
+        </div>
+    </section>
+    <section class="pb-3 md:pb-10">
+        <div class="container max-w-screen-xl mx-auto px-4">
+            <h1 class="font-medium text-gray-700 text-3xl md:text-4xl mb-2">How to create a static HTML blog - Part 1: Why?</h1>
+<p class="font-normal text-gray-500 text-xs md:text-base mb-10 italic">Published on May 23rd, 2024 by Akshit Arora</p>
+<article class="mt-10 font-normal text-gray-500 text-md">
+
+        <div class="w-full md:px-48 mb-8">
+            <img src="/assets/pexels-padrinan-1591056.jpg" class="rounded w-full" alt="How to set your own static HTML blog?" />
+        </div>
+
+    <p>We have a lot of options online for creating and publishing blog posts. The most famous and commonly used option is WordPress! But launching a WordPress website comes with a lot of issues. So, let's discuss in this series about creating a blog that is plain HTML and is as configurable as WordPress.</p>
+<p class="mt-2">For starters, there are two kinds of websites: <em>(Psst... If you know this already, you can jump to &quot;Why do we need a static HTML blog?&quot;)</em></p>
+<ol class="mt-2">
+<li>
+<strong>Dynamic Website:</strong> Dynamic website uses some programming language in the backend and stores your data in a database. A dynamic webpage generates the HTML on the fly and displays it to the visitor based on the page that the user is on. WordPress is an example of a dynamic website. It uses PHP as the programming language and MySQL as its database. Updating and creating new webpages seamlessly is easy in dynamic websites.</li>
+</ol>
+<ol class="mt-2" start="3">
+<li>
+<strong>Static Website:</strong> Static websites are pure HTML pages. They have no dependencies on any programming language or database in the background. However, we must create an HTML page for every web page/blog post we want on our website. It is generally manageable if the website has a lesser number of pages (between 10-30, depending on the patience level of the maintainer), but it becomes a lot harder to manage as the website size increases.</li>
+</ol>
+<h2 class="mt-5 text-xl font-bold">Why Do We Need a STATIC HTML Blog?</h2>
+<p class="mt-2">Dynamic websites are prone to hacking. WordPress comes with a lot of tools and plugins that help in making a good website. However, WordPress needs regular updates, and proper permissions set at the server level to ensure security. This comes with a learning curve. Or, you may have to depend on some service provider who can host the website for you. Now, your whole website depends on the skillset of the developer handling your website. A single misconfiguration in permissions will make your website a playground for hackers. But we just wanted a little space online to present ourselves and share our views, right? As a simple professional, we may be just looking for a space to showcase ourselves, share our views, publish our findings. These things should not come with the headache (and expense) of a whole agency managing my website, and then dealing with those hackers out there.</p>
+<p class="mt-2"><em>By the way, if you think that hacking issue is just a rumour, 30,000 websites are hacked every day, 43% of them are small websites.</em></p>
+<h3 class="mt-2 text-lg font-bold">The solution</h3>
+<p class="mt-2">KISS😘 PRINCIPLE: <em>(Not that kiss by the way!!)</em></p>
+<blockquote class="mt-2 underline underline-offset-8">
+<p>Keep it Stupidly Simple!</p>
+</blockquote>
+<p class="mt-2">That's it. That's the solution. Do not over complicate things when it is not required to!</p>
+<p class="mt-2">You want to showcase yourself? Create an HTML page for yourself (Or you can even hire a designer that may take a one time charge to make your HTML portfolio) and just publish it on a simple server. Ask some of your friends in IT or even give some extra bucks to your HTML Designer that may help you in getting those files on any simple Hosting Provider. There are even free of cost Hosting providers that can host your HTML website for free!</p>
+<p class="mt-2">And let me tell you, the HTML websites are not that bad. In fact a normal user can't tell a difference between a dynamic or a static website at all. By the way, the blog you're reading right now, is a static page, not a dynamic CMS!</p>
+<p class="mt-2">I'll post more about how you can set up your own full fledged static HTML website, that includes blog as well.</p>
+
+</article>
+
+        </div>
+    </section>
+    <footer class="py-10 md:py-16 mb-10 md:mb-40 lg::mb-52">
+    <div class="container max-w-screen-xl mx-auto px-4">
+        <div class="text-center">
+            <h1 class="font-medium text-gray-700 text-4xl md:text-5xl mb-5">Get in touch</h1>
+            <div class="flex items-center justify-center space-x-8">
+                <a href="https://twitter.com/akshitarora0907" class="w-16 h-16 flex items-center justify-center rounded-full hover:bg-gray-200 transition ease-in-out duration-500">
+                    <i data-feather="twitter" class="text-gray-500 hover:text-gray-800 transition ease-in-out duration-500"></i>
+                </a>
+                <a href="https://github.com/akshit-arora/" class="w-16 h-16 flex items-center justify-center rounded-full hover:bg-gray-200 transition ease-in-out duration-500">
+                    <i data-feather="github" class="text-gray-500 hover:text-gray-700 transition ease-in-out duration-500"></i>
+                </a>
+                <a href="mailto:hello@akshitarora.dev" class="w-16 h-16 flex items-center justify-center rounded-full hover:bg-gray-200 transition ease-in-out duration-500">
+                    <i data-feather="at-sign" class="text-gray-500 hover:text-gray-700 transition ease-in-out duration-500"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script>
+        feather.replace();
+    </script>
+</body>
+</html>
+
