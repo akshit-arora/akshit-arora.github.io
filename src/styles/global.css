@@ -1,0 +1,136 @@
+@import "tailwindcss";
+
+/* Design System Custom Theme for Akshit Arora Portfolio */
+@theme {
+  /* Color Palette */
+  --color-primary-50: oklch(0.97 0.01 245);
+  --color-primary-100: oklch(0.94 0.02 245);
+  --color-primary-200: oklch(0.88 0.04 245);
+  --color-primary-300: oklch(0.79 0.06 245);
+  --color-primary-400: oklch(0.68 0.10 245);
+  --color-primary-500: oklch(0.55 0.15 250);
+  --color-primary-600: oklch(0.48 0.18 250);
+  --color-primary-700: oklch(0.40 0.16 250);
+  --color-primary-800: oklch(0.35 0.12 250);
+  --color-primary-900: oklch(0.28 0.08 250);
+  --color-primary-950: oklch(0.18 0.05 250);
+
+  /* Background tones */
+  --color-slate-850: oklch(0.22 0.015 260);
+  --color-slate-925: oklch(0.14 0.01 260);
+  --color-slate-950: oklch(0.10 0.008 260);
+
+  /* Accent Colors */
+  --color-accent-cyan: oklch(0.75 0.14 195);
+  --color-accent-purple: oklch(0.65 0.20 285);
+  --color-accent-emerald: oklch(0.72 0.17 160);
+
+  /* Typography */
+  --font-family-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-family-display: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  /* Animation Timing */
+  --animate-fade-in: fade-in 0.6s ease-out forwards;
+  --animate-slide-up: slide-up 0.6s ease-out forwards;
+  --animate-counter: counter 2s ease-out forwards;
+  --animate-pulse-subtle: pulse-subtle 3s ease-in-out infinite;
+  --animate-glow: glow 3s ease-in-out infinite;
+}
+
+/* Keyframe Animations */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes counter {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(59, 130, 246, 0.5); }
+}
+
+/* Glassmorphism Utility */
+.glass {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Gradient Border */
+.gradient-border {
+  position: relative;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(147, 51, 234, 0.2) 100%);
+  border-radius: 9999px;
+  padding: 4px;
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  padding: 4px;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6, #06b6d4);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  animation: var(--animate-glow);
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Global body styles */
+body {
+  font-family: var(--font-family-sans);
+  background: linear-gradient(180deg, #0f172a 0%, #020617 100%);
+  min-height: 100vh;
+}
+
+/* Section fade-in on scroll */
+.section-animate {
+  opacity: 0;
+  animation: var(--animate-slide-up);
+  animation-delay: var(--delay, 0s);
+}
+
+/* Tech icon hover effect */
+.tech-icon {
+  transition: all 0.3s ease;
+}
+
+.tech-icon:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(59, 130, 246, 0.3);
+}
+
+/* Timeline connector */
+.timeline-line {
+  position: absolute;
+  left: 24px;
+  top: 48px;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, #3b82f6 0%, transparent 100%);
+}
+
+/* Stats counter animation */
+.stat-number {
+  animation: var(--animate-counter);
+  animation-delay: var(--delay, 0s);
+}

@@ -1,0 +1,95 @@
+---
+import '../styles/global.css';
+import { siteConfig } from '../data/content';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { 
+  title = siteConfig.headline, 
+  description = siteConfig.description 
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, siteConfig.siteUrl);
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  <!-- Primary Meta Tags -->
+  <title>{title}</title>
+  <meta name="title" content={title} />
+  <meta name="description" content={description} />
+  <meta name="author" content={siteConfig.name} />
+  <meta name="keywords" content="Technical Lead, System Architect, Akshit Arora, Senior Software Engineer, AWS Lambda, Laravel, PHP Developer, Backend Engineer, Microservices, Cloud Architecture" />
+  
+  <!-- Canonical -->
+  <link rel="canonical" href={canonicalURL} />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={siteConfig.siteUrl} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={`${siteConfig.siteUrl}${siteConfig.image}`} />
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content={siteConfig.siteUrl} />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={`${siteConfig.siteUrl}${siteConfig.image}`} />
+  <meta name="twitter:creator" content="@akshitarora0907" />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  
+  <!-- Google Analytics -->
+  <script async src={`https://www.googletagmanager.com/gtag/js?id=${siteConfig.gaId}`}></script>
+  <script is:inline define:vars={{ gaId: siteConfig.gaId }}>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', gaId);
+  </script>
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": siteConfig.name,
+    "url": siteConfig.siteUrl,
+    "jobTitle": siteConfig.title,
+    "description": siteConfig.description,
+    "image": `${siteConfig.siteUrl}${siteConfig.image}`,
+    "sameAs": [
+      siteConfig.social.twitter,
+      siteConfig.social.github,
+      siteConfig.social.linkedin,
+    ],
+    "knowsAbout": [
+      "System Architecture",
+      "Laravel",
+      "PHP",
+      "Node.js",
+      "AWS",
+      "Microservices",
+      "Technical Leadership"
+    ]
+  })} />
+</head>
+<body class="font-sans text-slate-100 antialiased">
+  <slot />
+</body>
+</html>
