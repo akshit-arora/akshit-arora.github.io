@@ -2,7 +2,7 @@
 import { projects } from '../data/content';
 ---
 
-<section id="projects" class="relative py-20 overflow-hidden">
+<section id="projects" class="relative py-24 overflow-hidden">
   <!-- Background -->
   <div class="absolute inset-0 bg-gradient-to-b from-slate-950 to-slate-900"></div>
   <div class="absolute top-1/2 right-0 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl"></div>
@@ -14,14 +14,14 @@ import { projects } from '../data/content';
         Featured Work
       </span>
       <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
-        Project Deep-Dive
+        Case Studies
       </h2>
       <p class="text-slate-400 max-w-2xl mx-auto">
-        Architecting solutions that scale
+        Real problems solved with measurable business impact
       </p>
     </div>
     
-    <!-- Projects Grid -->
+    <!-- Case Studies Grid -->
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
       {projects.map((project, index) => (
         <article 
@@ -33,22 +33,34 @@ import { projects } from '../data/content';
             {String(index + 1).padStart(2, '0')}
           </div>
           
-          <!-- Impact Badge -->
-          <div class="mb-4">
-            <span class="inline-block px-3 py-1 bg-emerald-500/10 border border-emerald-500/20 rounded-full text-xs font-medium text-emerald-400">
-              {project.impact}
-            </span>
-          </div>
-          
           <!-- Title -->
-          <h3 class="text-xl font-bold text-white mb-3 group-hover:text-emerald-400 transition-colors">
+          <h3 class="text-xl font-bold text-white mb-4 group-hover:text-emerald-400 transition-colors">
             {project.title}
           </h3>
           
-          <!-- Description -->
-          <p class="text-slate-400 text-sm mb-4 flex-1">
-            {project.description}
-          </p>
+          <!-- Problem -->
+          <div class="mb-4">
+            <span class="text-xs font-semibold text-red-400 uppercase tracking-wide">The Problem</span>
+            <p class="text-slate-400 text-sm mt-1">
+              {project.problem}
+            </p>
+          </div>
+          
+          <!-- Solution -->
+          <div class="mb-4">
+            <span class="text-xs font-semibold text-blue-400 uppercase tracking-wide">The Solution</span>
+            <p class="text-slate-400 text-sm mt-1">
+              {project.solution}
+            </p>
+          </div>
+          
+          <!-- Impact -->
+          <div class="mb-4">
+            <span class="text-xs font-semibold text-emerald-400 uppercase tracking-wide">The Impact</span>
+            <p class="text-slate-300 text-sm mt-1 font-medium">
+              {project.impact}
+            </p>
+          </div>
           
           <!-- Technologies -->
           <div class="flex flex-wrap gap-2 mt-auto pt-4 border-t border-slate-700/50">

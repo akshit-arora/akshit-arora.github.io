@@ -10,9 +10,10 @@ export interface Experience {
 
 export interface Project {
     title: string;
-    description: string;
-    technologies: string[];
+    problem: string;
+    solution: string;
     impact: string;
+    technologies: string[];
 }
 
 export interface TechCategory {
@@ -28,12 +29,25 @@ export interface Stat {
     description: string;
 }
 
+export interface Service {
+    title: string;
+    description: string;
+    icon: string;
+    technologies: string[];
+}
+
+export interface ProcessStep {
+    title: string;
+    description: string;
+    icon: string;
+}
+
 // Content
 export const siteConfig = {
     name: 'Akshit Arora',
     title: 'Technical Lead & System Architect',
-    headline: 'Akshit Arora | Technical Lead & System Architect',
-    subheadline: '12+ years experience building 10x faster applications and scaling microservices for 100k+ daily transactions',
+    headline: 'Building Scalable Digital Products for Startups & Enterprise',
+    subheadline: 'Technical Lead specializing in Mobile, Desktop, and Web solutions. 12+ years crafting high-performance systems that handle 100k+ daily transactions.',
     description: 'Technical Lead and System Architect with 12+ years of experience in PHP, Laravel, and cloud-native solutions. Expert in system design, performance optimization, and leading high-performing engineering teams.',
     email: 'hello@akshitarora.dev',
     social: {
@@ -70,6 +84,50 @@ export const stats: Stat[] = [
         value: '20+',
         icon: '👥',
         description: 'Engineers mentored and led',
+    },
+];
+
+export const services: Service[] = [
+    {
+        title: 'MVP Development',
+        description: 'Helping startups go from 0 to 1 quickly. Rapid prototyping and iterative development to validate your ideas and get to market fast.',
+        icon: '🚀',
+        technologies: ['Laravel', 'React', 'PostgreSQL', 'AWS'],
+    },
+    {
+        title: 'Full-Stack Engineering',
+        description: 'Scalable architecture built on battle-tested technologies. From database design to API development to frontend implementation.',
+        icon: '⚙️',
+        technologies: ['PHP/Laravel', 'Rust', 'Node.js', 'React', 'Vue.js'],
+    },
+    {
+        title: 'AI Integration',
+        description: 'Practical AI solutions that add real business value. From intelligent automation to LLM-powered features that enhance user experience.',
+        icon: '🤖',
+        technologies: ['OpenAI', 'LangChain', 'Python', 'RAG'],
+    },
+];
+
+export const processSteps: ProcessStep[] = [
+    {
+        title: 'Discovery',
+        description: 'Understanding your business goals, user needs, and technical requirements.',
+        icon: '🔍',
+    },
+    {
+        title: 'Design',
+        description: 'Architecting scalable solutions with clear technical specifications.',
+        icon: '📐',
+    },
+    {
+        title: 'Rapid Development',
+        description: 'AI-augmented workflows for faster iteration and delivery.',
+        icon: '⚡',
+    },
+    {
+        title: 'Deployment',
+        description: 'CI/CD pipelines, monitoring, and production-ready infrastructure.',
+        icon: '🚀',
     },
 ];
 
@@ -156,22 +214,39 @@ export const experiences: Experience[] = [
 
 export const projects: Project[] = [
     {
-        title: 'E-commerce Platform',
-        description: 'Unified platform managing 30+ global marketplaces with real-time inventory sync, order management, and analytics.',
-        technologies: ['AWS Lambda', 'Node.js', 'Redis', 'PostgreSQL'],
-        impact: '30+ Global Marketplaces',
+        title: 'QuestioCare',
+        problem: 'Healthcare providers lacked tools to assess student mental, physical, and emotional health efficiently, missing critical warning signs.',
+        solution: 'Built a comprehensive questionnaire system with customizable assessments, real-time feedback, and automated urgent notifications for critical issues like suicidal tendencies and bullying.',
+        impact: 'Enabled early intervention for at-risk students, reducing response time to critical issues by 70%',
+        technologies: ['Laravel', 'MySQL', 'JavaScript', 'jQuery', 'GitHub Actions'],
     },
     {
-        title: 'QuestioCare',
-        description: 'Real-time mental health diagnostic platform with intelligent questionnaire routing and analytics dashboard.',
-        technologies: ['Laravel', 'MySQL', 'Vue.js', 'Redis'],
-        impact: 'Real-time Diagnostics',
+        title: 'Multichannel E-commerce System',
+        problem: 'Sellers struggled to manage inventory and pricing across 30+ marketplaces, leading to overselling and pricing inconsistencies.',
+        solution: 'Architected a unified platform with automatic price adjustments based on supply-demand, centralized inventory management, and real-time sync across all channels.',
+        impact: 'Processing 10,000+ orders and 100,000+ inventory transactions daily with 99.9% accuracy',
+        technologies: ['Laravel', 'CodeIgniter', 'MySQL', 'AWS Lambda', 'EC2', 'Redis'],
+    },
+    {
+        title: 'Volga Billing System',
+        problem: 'SME factory needed fast invoice generation with custom pricing per customer but existing solutions were too slow and inflexible.',
+        solution: 'Developed a LAN-based billing system with customer-specific pricing rules and automated PDF bill generation on company letterheads.',
+        impact: 'Reduced invoice generation time by 80%, eliminating manual pricing errors',
+        technologies: ['Laravel', 'Vue.js', 'MySQL'],
+    },
+    {
+        title: 'ConsultOn',
+        problem: 'Users seeking expert advice on health, finances, and relationships had no unified platform to connect with verified professionals.',
+        solution: 'Created an online consultation platform with Q&A forums, expert verification, and integrated scheduling with IVR-based call booking.',
+        impact: 'Connected 5,000+ users with verified experts across multiple domains',
+        technologies: ['CodeIgniter', 'Slim Framework', 'IVR Setup', 'MySQL'],
     },
     {
         title: 'Fleet Management System',
-        description: 'Enterprise fleet management solution with live vehicle tracking, route optimization, and fuel analytics.',
-        technologies: ['Google Maps API', 'Laravel', 'WebSockets'],
-        impact: 'Built for EY LLP',
+        problem: 'EY LLP India needed to efficiently manage cab bookings for guests and employees while tracking usage and contractor payments.',
+        solution: 'Built a scheduling system with vehicle type selection, automated billing based on fleet usage, and real-time vehicle tracking via Google Maps.',
+        impact: 'Streamlined fleet operations, reducing booking time by 60% and improving billing accuracy',
+        technologies: ['CodeIgniter', 'Slim Framework', 'JavaScript', 'Google Maps API'],
     },
 ];
 
@@ -179,7 +254,7 @@ export const techStack: TechCategory[] = [
     {
         name: 'Backend',
         icon: '⚙️',
-        technologies: ['Laravel', 'Node.js', 'PHP', 'Python'],
+        technologies: ['Laravel', 'PHP', 'Node.js', 'Rust', 'Python'],
     },
     {
         name: 'Infrastructure',
@@ -189,6 +264,6 @@ export const techStack: TechCategory[] = [
     {
         name: 'Frontend',
         icon: '🎨',
-        technologies: ['JavaScript', 'Vue.js', 'TypeScript', 'Tailwind CSS'],
+        technologies: ['JavaScript', 'Vue.js', 'React', 'TypeScript', 'Tailwind CSS'],
     },
 ];

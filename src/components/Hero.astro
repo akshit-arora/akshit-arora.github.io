@@ -2,63 +2,72 @@
 import { siteConfig } from '../data/content';
 ---
 
-<section id="hero" class="relative min-h-screen flex items-center justify-center py-20 overflow-hidden">
+<section id="hero" class="relative min-h-screen flex items-center justify-center py-32 overflow-hidden">
   <!-- Background Gradient Effects -->
   <div class="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950"></div>
   <div class="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
   <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
   
-  <div class="container relative max-w-6xl mx-auto px-6 text-center">
-    <!-- Profile Image with Gradient Border -->
-    <div class="flex justify-center mb-10" style="--delay: 0.1s">
-      <div class="gradient-border" style="animation: glow 3s ease-in-out infinite;">
-        <img 
-          src={siteConfig.image} 
-          alt={siteConfig.name}
-          width="200"
-          height="200"
-          class="w-48 h-48 rounded-full object-cover"
-          loading="eager"
-        />
+  <div class="container relative max-w-6xl mx-auto px-6">
+    <div class="flex flex-col lg:flex-row items-center gap-12">
+      <!-- Content -->
+      <div class="flex-1 text-center lg:text-left">
+        <!-- Badge -->
+        <div class="inline-block px-4 py-2 glass rounded-full text-sm font-medium text-blue-400 mb-6 section-animate" style="--delay: 0.1s">
+          Technical Lead & System Architect
+        </div>
+        
+        <!-- Headline -->
+        <h1 
+          class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-blue-100 to-slate-300 bg-clip-text text-transparent section-animate leading-tight"
+          style="--delay: 0.2s"
+        >
+          {siteConfig.headline}
+        </h1>
+        
+        <!-- Sub-headline -->
+        <p 
+          class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto lg:mx-0 mb-10 leading-relaxed section-animate"
+          style="--delay: 0.4s"
+        >
+          {siteConfig.subheadline}
+        </p>
+        
+        <!-- Dual CTAs -->
+        <div 
+          class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center section-animate"
+          style="--delay: 0.6s"
+        >
+          <a 
+            href="#projects"
+            class="group px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/30 hover:-translate-y-0.5 w-full sm:w-auto text-center"
+          >
+            View Technical Portfolio
+            <span class="inline-block ml-2 transition-transform group-hover:translate-x-1">→</span>
+          </a>
+          <a 
+            href="#contact"
+            class="group px-8 py-4 glass rounded-lg font-semibold text-slate-200 hover:text-white transition-all duration-300 hover:bg-white/10 border border-slate-700 hover:border-blue-500/50 w-full sm:w-auto text-center"
+          >
+            Hire for a Project
+            <span class="inline-block ml-2 transition-transform group-hover:translate-x-1">💼</span>
+          </a>
+        </div>
       </div>
-    </div>
-    
-    <!-- Headline -->
-    <h1 
-      class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-blue-100 to-slate-300 bg-clip-text text-transparent section-animate"
-      style="--delay: 0.2s"
-    >
-      {siteConfig.headline}
-    </h1>
-    
-    <!-- Sub-headline -->
-    <p 
-      class="text-lg md:text-xl lg:text-2xl text-slate-400 max-w-3xl mx-auto mb-10 leading-relaxed section-animate"
-      style="--delay: 0.4s"
-    >
-      {siteConfig.subheadline}
-    </p>
-    
-    <!-- CTA Buttons -->
-    <div 
-      class="flex flex-col sm:flex-row gap-4 justify-center items-center section-animate"
-      style="--delay: 0.6s"
-    >
-      <a 
-        href="#projects"
-        class="group px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/30 hover:-translate-y-0.5"
-      >
-        View Projects
-        <span class="inline-block ml-2 transition-transform group-hover:translate-x-1">→</span>
-      </a>
-      <a 
-        href={siteConfig.social.twitter}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="px-8 py-4 glass rounded-lg font-semibold text-slate-200 hover:text-white transition-all duration-300 hover:bg-white/10"
-      >
-        Connect with me
-      </a>
+      
+      <!-- Profile Image -->
+      <div class="flex-shrink-0 section-animate" style="--delay: 0.3s">
+        <div class="gradient-border" style="animation: glow 3s ease-in-out infinite;">
+          <img 
+            src={siteConfig.image} 
+            alt={siteConfig.name}
+            width="280"
+            height="280"
+            class="w-56 h-56 lg:w-72 lg:h-72 rounded-full object-cover"
+            loading="eager"
+          />
+        </div>
+      </div>
     </div>
     
     <!-- Scroll Indicator -->

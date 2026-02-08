@@ -1,0 +1,112 @@
+---
+import { siteConfig } from '../data/content';
+
+const navLinks = [
+  { name: 'Work', href: '#projects' },
+  { name: 'Services', href: '#services' },
+  { name: 'About', href: '#experience' },
+];
+---
+
+<header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+  <div class="glass border-b border-white/5">
+    <nav class="container max-w-6xl mx-auto px-6 py-4">
+      <div class="flex items-center justify-between">
+        <!-- Logo/Name -->
+        <a href="/" class="text-xl font-bold text-white hover:text-blue-400 transition-colors">
+          {siteConfig.name}
+        </a>
+        
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex items-center gap-8">
+          {navLinks.map((link) => (
+            <a 
+              href={link.href}
+              class="text-sm font-medium text-slate-400 hover:text-white transition-colors relative group"
+            >
+              {link.name}
+              <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
+            </a>
+          ))}
+          <a 
+            href="#contact"
+            class="px-5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white text-sm font-semibold rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/30 hover:-translate-y-0.5"
+          >
+            Let's Talk
+          </a>
+        </div>
+        
+        <!-- Mobile Menu Button -->
+        <button 
+          id="mobile-menu-btn"
+          class="md:hidden p-2 text-slate-400 hover:text-white transition-colors"
+          aria-label="Toggle menu"
+        >
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </nav>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-white/5">
+      <div class="container max-w-6xl mx-auto px-6 py-4 space-y-4">
+        {navLinks.map((link) => (
+          <a 
+            href={link.href}
+            class="block text-slate-400 hover:text-white transition-colors py-2"
+          >
+            {link.name}
+          </a>
+        ))}
+        <a 
+          href="#contact"
+          class="block w-full text-center px-5 py-3 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-lg transition-all duration-300"
+        >
+          Let's Talk
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  const menuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = document.getElementById('menu-icon');
+  
+  menuBtn?.addEventListener('click', () => {
+    const isOpen = !mobileMenu?.classList.contains('hidden');
+    mobileMenu?.classList.toggle('hidden');
+    
+    if (isOpen) {
+      menuIcon?.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+    } else {
+      menuIcon?.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+    }
+  });
+  
+  // Close mobile menu on link click
+  mobileMenu?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      menuIcon?.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+    });
+  });
+  
+  // Header scroll effect
+  let lastScroll = 0;
+  window.addEventListener('scroll', () => {
+    const header = document.getElementById('header');
+    const currentScroll = window.scrollY;
+    
+    if (currentScroll > 50) {
+      header?.classList.add('bg-slate-900/80');
+    } else {
+      header?.classList.remove('bg-slate-900/80');
+    }
+    
+    lastScroll = currentScroll;
+  });
+</script>

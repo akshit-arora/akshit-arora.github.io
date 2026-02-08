@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import { siteConfig } from '../data/content';
+import Header from '../components/Header.astro';
 
 interface Props {
   title?: string;
@@ -90,6 +91,7 @@ const canonicalURL = new URL(Astro.url.pathname, siteConfig.siteUrl);
   })} />
 </head>
 <body class="font-sans text-slate-100 antialiased">
+  <Header />
   <slot />
 </body>
 </html>
